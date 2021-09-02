@@ -1,0 +1,32 @@
+{
+  "name": "mock-in-bundle",
+  "version": "1.0.0",
+  "description": "Cypress utility for mocking a module inside a Webpack bundle",
+  "main": "src",
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bahmutov/mock-in-bundle.git"
+  },
+  "keywords": [
+    "mock",
+    "cypress",
+    "webpack",
+    "utility"
+  ],
+  "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bahmutov/mock-in-bundle/issues"
+  },
+  "homepage": "https://github.com/bahmutov/mock-in-bundle#readme",
+  "devDependencies": {
+    "cypress": "^8.3.1",
+    "prettier": "^2.3.2"
+  }
+}
