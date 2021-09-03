@@ -68,3 +68,15 @@ export const mockInBundle = (
     })
   })
 }
+
+export const injectFn = (fn) => {
+  const randomFnId = Math.random().toString(36).substring(7)
+  const winId = `__mockInBundle__${randomFnId}`
+  const windowId = `window.${winId}`
+
+  cy.on('window:before:load', (win) => {
+    win[winId] = fn
+  })
+
+  return windowId
+}
