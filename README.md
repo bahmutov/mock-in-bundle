@@ -3,6 +3,17 @@
 
 [![ci status][ci image]][ci url] [![semantic-release][semantic-image] ][semantic-url]
 
+Watch the video [Mock ES6 Module From Cypress E2E Test](https://youtu.be/RAFdYqRO2vI)
+
+<center>
+<h1>DO NOT USE. TOO EARLY ☠️</h1>
+</center>
+
+## Examples
+
+But if you are going to use, at least check out the examples:
+- [bahmutov/sudoku-mock-module](https://github.com/bahmutov/sudoku-mock-module)
+
 ## Small print
 
 Author: Gleb Bahmutov &copy; 2021
