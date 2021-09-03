@@ -46,6 +46,5 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 [semantic-image]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
 [semantic-url]: https://github.com/semantic-release/semantic-release
-
-[ci image]: https://github.com/bahmutov/mock-in-bundle/workflows/ci/badge.svg?branch=master
+[ci image]: https://github.com/bahmutov/mock-in-bundle/workflows/ci/badge.svg?branch=main
 [ci url]: https://github.com/bahmutov/mock-in-bundle/actions
