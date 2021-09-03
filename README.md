@@ -9,6 +9,62 @@ Watch the video [Mock ES6 Module From Cypress E2E Test](https://youtu.be/RAFdYqR
 <h1>DO NOT USE. TOO EARLY ☠️</h1>
 </center>
 
+## Install
+
+```shell
+$ npm i -D mock-in-bundle
+# or using Yarn
+$ yarn add -D mock-in-bundle
+```
+
+The import the function in your spec
+
+```js
+import { mockInBundle } from 'mock-in-bundle'
+```
+
+## API
+
+### Mock a single module
+
+```js
+it('mocks named export Age', () => {
+  mockInBundle('src/Person.js', { Age: 20 })
+})
+```
+
+You can optionally limit the JS bundles to inspect. For example, react-scripts put the application code into the `main.chunk.js`. Pass it as th third argument.
+
+```js
+it('mocks named export Age', () => {
+  mockInBundle('src/Person.js', { Age: 20 }, 'main.chunk.js')
+})
+```
+
+### Mock multiple modules
+
+You can mock multiple modules at once by using an object with `[module name]: mocks` format.
+
+```js
+// import React so we can mock JSX components
+import React from 'react'
+
+it('mocks Person and Timer', () => {
+  mockInBundle({
+    'src/Person.js': { Age: 20 },
+    'src/Timer.js': { default: () => <div>Mock Time</div> },
+  })
+})
+```
+
+**Tip:** you can pass the bundle name/pattern as the second argument
+
+```js
+mockInBundle({
+  modules to mock
+}, 'main.chunk.js')
+```
+
 ## Examples
 
 But if you are going to use, at least check out the examples:
