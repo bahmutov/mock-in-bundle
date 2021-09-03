@@ -1,6 +1,9 @@
 /// <reference types="cypress" />
 // @ts-check
 
+// Cypress bundles Lodash library
+const { _ } = Cypress
+
 export const mockInBundle = (
   localModuleName, // like "src/Board.js"
   mockedExports,
@@ -9,6 +12,11 @@ export const mockInBundle = (
   if (!mockedExports) {
     throw new Error('mockedExports is required')
   }
+
+  // inject any function defined in the spec file
+  mockedExports = _.mapValues(mockedExports, (value) =>
+    _.isFunction(value) ? injectFn(value) : value,
+  )
 
   cy.intercept(jsResourcePattern, (req) => {
     // remove caching
@@ -35,8 +43,8 @@ export const mockInBundle = (
 
       let namedExportsCode = ''
 
-      const namedExports = Cypress._.omit(mockedExports, ['default'])
-      if (!Cypress._.isEmpty(namedExports)) {
+      const namedExports = _.omit(mockedExports, ['default'])
+      if (!_.isEmpty(namedExports)) {
         Object.keys(namedExports).forEach((key) => {
           const value = namedExports[key]
           namedExportsCode += `
