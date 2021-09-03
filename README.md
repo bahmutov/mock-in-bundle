@@ -1,4 +1,4 @@
-# mock-in-bundle
+# mock-in-bundle ![cypress version](https://img.shields.io/badge/cypress-8.3.1-brightgreen)
 > Cypress utility for mocking a module inside a Webpack bundle
 
 [![ci status][ci image]][ci url] [![semantic-release][semantic-image] ][semantic-url]
