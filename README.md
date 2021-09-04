@@ -23,6 +23,12 @@ The import the function in your spec
 import { mockInBundle } from 'mock-in-bundle'
 ```
 
+## Supports
+
+This module supports mocking modules served by:
+
+- Webpack v4 in dev mode (unminified)
+
 ## API
 
 ### Mock a single module
@@ -68,7 +74,9 @@ mockInBundle({
 ## Examples
 
 But if you are going to use, at least check out the examples:
+
 - [bahmutov/sudoku-mock-module](https://github.com/bahmutov/sudoku-mock-module)
+- [bahmutov/haptics-and-micro-animations](https://github.com/bahmutov/haptics-and-micro-animations) shows how to mock external library in a React Native project served using Expo
 
 ## Small print
 
