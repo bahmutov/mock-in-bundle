@@ -1,4 +1,5 @@
 # mock-in-bundle ![cypress version](https://img.shields.io/badge/cypress-8.3.1-brightgreen)
+
 > Cypress utility for mocking a module inside a Webpack bundle
 
 [![ci status][ci image]][ci url] [![semantic-release][semantic-image] ][semantic-url]
@@ -36,6 +37,7 @@ This module supports mocking modules served by:
 ```js
 it('mocks named export Age', () => {
   mockInBundle('src/Person.js', { Age: 20 })
+  cy.visit('/')
 })
 ```
 
@@ -44,6 +46,19 @@ You can optionally limit the JS bundles to inspect. For example, react-scripts p
 ```js
 it('mocks named export Age', () => {
   mockInBundle('src/Person.js', { Age: 20 }, 'main.chunk.js')
+  cy.visit('/')
+})
+```
+
+### Mock default export
+
+```js
+import { mockInBundle } from 'mock-in-bundle'
+
+it('mocks the Config module', () => {
+  mockInBundle('src/Config.tsx', { default: { title: 'Mock Test' } })
+  cy.visit('/')
+  cy.contains('h1', 'Mock Test')
 })
 ```
 
@@ -60,6 +75,7 @@ it('mocks Person and Timer', () => {
     'src/Person.js': { Age: 20 },
     'src/Timer.js': { default: () => <div>Mock Time</div> },
   })
+  cy.visit('/')
 })
 ```
 
@@ -77,15 +93,16 @@ But if you are going to use, at least check out the examples:
 
 - [bahmutov/sudoku-mock-module](https://github.com/bahmutov/sudoku-mock-module)
 - [bahmutov/haptics-and-micro-animations](https://github.com/bahmutov/haptics-and-micro-animations) shows how to mock external library in a React Native project served using Expo
+- [bahmutov/stub-window-object-example](https://github.com/bahmutov/stub-window-object-example)
 
 ## Small print
 
 Author: Gleb Bahmutov &copy; 2021
 
-* [@bahmutov](https://twitter.com/bahmutov)
-* [glebbahmutov.com](https://glebbahmutov.com)
-* [blog](https://glebbahmutov.com/blog/)
-* [videos](https://www.youtube.com/glebbahmutov)
+- [@bahmutov](https://twitter.com/bahmutov)
+- [glebbahmutov.com](https://glebbahmutov.com)
+- [blog](https://glebbahmutov.com/blog/)
+- [videos](https://www.youtube.com/glebbahmutov)
 
 License: MIT - do anything with the code, but don't blame me if it does not work.
 
