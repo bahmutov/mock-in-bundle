@@ -95,6 +95,10 @@ But if you are going to use, at least check out the examples:
 - [bahmutov/haptics-and-micro-animations](https://github.com/bahmutov/haptics-and-micro-animations) shows how to mock external library in a React Native project served using Expo
 - [bahmutov/stub-window-object-example](https://github.com/bahmutov/stub-window-object-example)
 
+## Read
+
+- [When Has The App Loaded](https://glebbahmutov.com/blog/app-loaded/)
+
 ## Small print
 
 Author: Gleb Bahmutov &copy; 2021
